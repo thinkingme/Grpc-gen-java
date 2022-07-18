@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.apexsoft'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":xiamenxt-app-protocol")
+    implementation 'cn.hutool:hutool-all:5.7.18'
+    implementation 'org.freemarker:freemarker:2.3.23'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
