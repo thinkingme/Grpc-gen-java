@@ -15,7 +15,7 @@ public class ${className}{
 <#list funcList as func>
     @GrpcMethodAnnotation
     public String ${func.funcName}(${func.inParam} request, ${func.outParam} responseObserver) {
-        return baseProcProducerService.<#if func.outParam == "StreamObserver<ExecResponse>">proExec</#if><#if func.outParam == "StreamObserver<QueryResponse>">proQuery</#if>("",request, responseObserver);
+        return baseProcProducerService.callProducer("",request, responseObserver);
     }
 </#list>
 
